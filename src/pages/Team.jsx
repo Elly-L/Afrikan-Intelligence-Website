@@ -7,22 +7,22 @@ import { createPageUrl } from '@/utils';
 export default function Team() {
   const team = [
     {
+      name: 'Elly Odhiambo',
+      role: 'Founder & CEO',
+      title: 'The Strategist',
+      image: '/src/assets/team/elly-odhiambo.jpg',
+      description: 'Operator with deep roots in African fintech and logistics. Elly understands how traders move money, how doctors diagnose patients, and how AI reaches the last-mile. He\'s building the go-to-market that gets this tech into the hands of 1.2 billion people.',
+      tags: ['Strategy', 'Operations', 'Go-to-Market'],
+      color: 'from-orange-500 to-amber-500',
+    },
+    {
       name: 'Chris Kinyua',
       role: 'Co-Founder & CTO',
       title: 'The Architect',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+      image: '/src/assets/team/chris-kinyua.jpg',
       description: 'Deep machine learning engineer obsessed with latency optimization. Chris builds the neural core that makes 178ms possible. Quantization, edge deployment, and acoustic modeling are his north stars.',
       tags: ['Engineering', 'ML Ops', 'Inference'],
       color: 'from-blue-500 to-cyan-500',
-    },
-    {
-      name: 'Elly Odhiambo',
-      role: 'Co-Founder & CEO',
-      title: 'The Strategist',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      description: 'Operator with deep roots in African fintech and logistics. Elly understands how traders move money, how doctors diagnose patients, and how AI reaches the last-mile.',
-      tags: ['Strategy', 'Operations', 'Go-to-Market'],
-      color: 'from-orange-500 to-amber-500',
     },
   ];
 
