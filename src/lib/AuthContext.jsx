@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { appParams } from '@/lib/app-params';
+import { appParams } from './app_params';
 import { createAxiosClient } from '@/lib/mockAxiosClient';
 
 const AuthContext = createContext();
