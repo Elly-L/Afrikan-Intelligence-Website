@@ -116,17 +116,6 @@ export default function Navbar() {
 
           {/* Mobile actions */}
           <div className="xl:hidden flex items-center gap-2">
-            <LangSwitcher compact />
-            <button
-              onClick={toggle}
-              className="w-8 h-8 rounded-full flex items-center justify-center"
-              style={{
-                background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)',
-                color: isDark ? '#F59E0B' : '#7C3AED',
-              }}
-            >
-              {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
-            </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
@@ -195,7 +184,22 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
-              <div className="pt-3 pb-2">
+              {/* Language + Theme in mobile menu */}
+              <div className="px-4 pt-2 pb-1 flex items-center gap-3 border-t" style={{ borderColor: 'rgba(217,119,6,0.12)' }}>
+                <LangSwitcher />
+                <button
+                  onClick={toggle}
+                  className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)',
+                    color: isDark ? '#F59E0B' : '#7C3AED',
+                  }}
+                  aria-label="Toggle theme"
+                >
+                  {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </button>
+              </div>
+              <div className="pt-2 pb-2 px-4">
                 <Link
                   to={createPageUrl('Contact')}
                   className="flex items-center justify-center w-full py-3.5 text-white font-bold rounded-xl transition-all duration-200 active:scale-95"
