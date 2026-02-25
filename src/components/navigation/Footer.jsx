@@ -55,10 +55,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { labelKey: 'about', page: 'About' },
-                { labelKey: 'team', page: 'Team' },
                 { labelKey: 'technology', page: 'Technology' },
                 { labelKey: 'languages', page: 'Languages' },
                 { labelKey: 'contact', page: 'Contact' },
+                { label: 'Team', page: 'Team' },
               ].map((item) => (
                 <li key={item.page}>
                   <Link
@@ -66,7 +66,7 @@ export default function Footer() {
                     className="text-sm transition-colors duration-200 hover:text-amber-500"
                     style={{ color: '#57534E' }}
                   >
-                    {tr(T.nav[item.labelKey])}
+                    {item.label || tr(T.nav[item.labelKey])}
                   </Link>
                 </li>
               ))}
