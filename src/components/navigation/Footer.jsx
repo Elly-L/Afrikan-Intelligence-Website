@@ -55,6 +55,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { labelKey: 'about', page: 'About' },
+                { labelKey: 'team', page: 'Team' },
                 { labelKey: 'technology', page: 'Technology' },
                 { labelKey: 'languages', page: 'Languages' },
                 { labelKey: 'contact', page: 'Contact' },
