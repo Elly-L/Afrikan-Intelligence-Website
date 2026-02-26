@@ -33,7 +33,7 @@ export default function AfricaMap({ activeRegion, onRegionClick }) {
   const [countries, setCountries] = useState([]);
   const [paths, setPaths] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [dims, setDims] = useState({ width: 500, height: 600 });
+  const [dims, setDims] = useState({ width: '100%', height: 'auto' });
 
   useEffect(() => {
     fetch(GEOJSON_URL)
@@ -42,6 +42,8 @@ export default function AfricaMap({ activeRegion, onRegionClick }) {
         // Filter Africa only
         const africaFeatures = data.features.filter(f => {
           const name = f.properties.ADMIN || f.properties.name || '';
+          // Explicitly exclude non-African countries including Alaska
+          if (name.toLowerCase().includes('alaska')) return false;
           return getRegion(name) !== null;
         });
         setCountries(africaFeatures);

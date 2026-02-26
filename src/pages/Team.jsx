@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail, Code, TrendingUp, ArrowRight } from 'lucide-react';
+import { Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { useT } from '@/components/shared/LanguageContext';
+import { T } from '@/components/shared/i18n/translations';
 
 export default function Team() {
   const team = [
@@ -64,17 +66,16 @@ export default function Team() {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium mb-8">
-              Meet the Team
+              {tr(T.team.badge)}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              The Hacker &<br />
+              {tr(T.team.title)}<br />
               <span className="bg-gradient-to-r from-orange-400 to-amber-400 text-transparent bg-clip-text">
-                The Hustler
+                {tr(T.team.subtitle)}
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 leading-relaxed">
-              Building Africa's acoustic infrastructure takes vision, engineering, 
-              and relentless execution. Meet the founders making it happen.
+              {tr(T.team.description)}
             </p>
           </motion.div>
         </div>
@@ -155,12 +156,12 @@ export default function Team() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Advisors & Partners
-            </h2>
-            <p className="text-slate-400">
-              Guided by experts in AI, FinTech, and African markets
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {tr(T.team.advisorsTitle)}
+              </h2>
+              <p className="text-slate-400">
+                {tr(T.team.advisorsDesc)}
+              </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -197,13 +198,12 @@ export default function Team() {
             viewport={{ once: true }}
             className="p-10 md:p-14 rounded-3xl bg-gradient-to-br from-slate-800/90 to-orange-900/20 border border-slate-700/50 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Join the Team
-            </h2>
-            <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
-              We're looking for passionate engineers, researchers, and operators who want to 
-              decolonize AI and build technology that serves 1.2 billion people.
-            </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                {tr(T.team.joinTitle)}
+              </h2>
+              <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
+                {tr(T.team.joinDesc)}
+              </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to={createPageUrl('Contact')}
